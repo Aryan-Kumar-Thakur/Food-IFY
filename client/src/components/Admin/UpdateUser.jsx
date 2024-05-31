@@ -29,11 +29,11 @@ const UpdateUser = () => {
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
 
-  const {userId} = useParams();
+  const {id} = useParams();
 
   useEffect(() => {
-    if (user && user._id !== userId) {
-      dispatch(getUserDetails(userId));
+    if (user && user._id !== id) {
+      dispatch(getUserDetails(id));
     } else {
       setName(user.name);
       setEmail(user.email);
@@ -54,7 +54,7 @@ const UpdateUser = () => {
       navigate("/admin/users");
       dispatch(UPDATE_USER_RESET());
     }
-  }, [dispatch, alert, error, navigate, isUpdated, updateError, user, userId]);
+  }, [dispatch, alert, error, navigate, isUpdated, updateError, user, id]);
 
   const updateUserSubmitHandler = (e) => {
     e.preventDefault();
@@ -65,7 +65,7 @@ const UpdateUser = () => {
     myForm.set("email", email);
     myForm.set("role", role);
 
-    dispatch(updateUser(userId, myForm));
+    dispatch(updateUser(id, myForm));
   };
 
   return (

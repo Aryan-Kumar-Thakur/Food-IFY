@@ -85,7 +85,7 @@ const ConfirmOrder = () => {
                                 <span>₹{subtotal}</span>
                             </div>
                             <div>
-                                <p>Shipping Charges</p>
+                                <p>Delivery Charges</p>
                                 <span>₹{shippingChages}</span>
                             </div>
                             <div>

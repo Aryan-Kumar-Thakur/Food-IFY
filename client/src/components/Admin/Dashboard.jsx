@@ -15,11 +15,19 @@ const Dashboard = () => {
 
   const dispatch = useDispatch();
 
-  const { products} = useSelector((state) => state.adminProducts)
+  const { products } = useSelector((state) => state.adminProducts);
+
+
 
   useEffect(()=>{
     dispatch(getAdminProducts())
   },[dispatch])
+
+  // let totalAmount = 0;
+  // orders &&
+  //   orders.forEach((item) => {
+  //     totalAmount += item.totalPrice;
+  //   });
 
   let outOfStock = 0;
 
@@ -63,7 +71,7 @@ const Dashboard = () => {
           <div className="dashboardSummary">
             <div>
               <p>
-                Total Amount <br /> ₹2000
+                Total Amount <br />  ₹4000
               </p>
             </div>
             <div className="dashboardSummaryBox2">
@@ -73,11 +81,11 @@ const Dashboard = () => {
               </Link>
               <Link to="/admin/orders">
                 <p>Orders</p>
-                <p>2</p>
+                {/* <p>3</p> */}
               </Link>
               <Link to="/admin/users">
                 <p>Users</p>
-                <p>2</p>
+                {/* <p>4</p> */}
               </Link>
             </div>
           </div>
