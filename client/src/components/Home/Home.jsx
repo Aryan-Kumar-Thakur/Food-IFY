@@ -25,6 +25,8 @@ const Home = () => {
     dispatch(getProducts())
   }, [dispatch, error, alert])
 
+  // addEventListener('contextmenu',(e)=>e.preventDefault())
+
   return (
     <>
       {loading ? <Loader/> :

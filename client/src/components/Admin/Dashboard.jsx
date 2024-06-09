@@ -8,6 +8,8 @@ import Chart from 'chart.js/auto';
 import { useDispatch, useSelector } from 'react-redux'
 import { useAlert } from 'react-alert'
 import { getAdminProducts } from '../../actions/productActions'
+import { getAllOrders } from '../../actions/orderActions'
+import { getAllUsers } from '../../actions/userActions'
 // import {CategoryScale} from 'chart.js'; 
 // Chart.register(CategoryScale);
 
@@ -17,17 +19,24 @@ const Dashboard = () => {
 
   const { products } = useSelector((state) => state.adminProducts);
 
+  const {orders} = useSelector((state)=>state.allOrders)
+
+  const { users } = useSelector((state) => state.allUsers);
+
+
 
 
   useEffect(()=>{
     dispatch(getAdminProducts())
+    dispatch(getAllOrders());
+    dispatch(getAllUsers());
   },[dispatch])
 
-  // let totalAmount = 0;
-  // orders &&
-  //   orders.forEach((item) => {
-  //     totalAmount += item.totalPrice;
-  //   });
+  let totalAmount = 0;
+  orders &&
+    orders.forEach((item) => {
+      totalAmount += item.totalPrice;
+    });
 
   let outOfStock = 0;
 
@@ -71,7 +80,7 @@ const Dashboard = () => {
           <div className="dashboardSummary">
             <div>
               <p>
-                Total Amount <br />  ₹4000
+                Total Amount <br />  ₹{totalAmount}
               </p>
             </div>
             <div className="dashboardSummaryBox2">
@@ -81,11 +90,11 @@ const Dashboard = () => {
               </Link>
               <Link to="/admin/orders">
                 <p>Orders</p>
-                {/* <p>3</p> */}
+                <p>{orders.length}</p>
               </Link>
               <Link to="/admin/users">
                 <p>Users</p>
-                {/* <p>4</p> */}
+                <p>{users.length}</p>
               </Link>
             </div>
           </div>
