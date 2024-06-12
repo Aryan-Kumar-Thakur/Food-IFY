@@ -1,4 +1,5 @@
 import express from 'express'
+import path from 'path'
 import cookieParser from "cookie-parser";
 import errorMiddleware from './middleware/error.js';
 import cors from "cors"
@@ -8,6 +9,7 @@ import dotenv from 'dotenv'
 
 
 dotenv.config({path:'server/config/config.env'})
+const __dirname = path.resolve();
 
 const app=express();
 
@@ -15,6 +17,7 @@ app.use(cookieParser())
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(fileUpload())
+app.use(express.static(path.join(__dirname, "/client/dist")));
 
 app.use(cors({
     origin: 'http://localhost:5173', //allow request only from these site
