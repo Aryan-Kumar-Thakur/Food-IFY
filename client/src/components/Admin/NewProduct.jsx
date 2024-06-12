@@ -22,6 +22,7 @@ const NewProduct = () => {
   const { loading, error, success } = useSelector((state) => state.newProduct)
 
   const [name, setName] = useState("");
+  const [restaurant, setRestaurant] = useState("");
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
@@ -58,6 +59,7 @@ const NewProduct = () => {
     const myForm = new FormData();
 
     myForm.set("name", name);
+    myForm.set("restaurant", restaurant);
     myForm.set("price", price);
     myForm.set("description", description);
     myForm.set("category", category);
@@ -110,6 +112,16 @@ const NewProduct = () => {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div>
+              <SpellcheckIcon />
+              <input
+                type="text"
+                placeholder="Restaurant Name"
+                required
+                value={name}
+                onChange={(e) => setRestaurant(e.target.value)}
               />
             </div>
             <div>
