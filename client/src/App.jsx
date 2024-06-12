@@ -42,7 +42,7 @@ import NotFound from './components/layout/Not Found/NotFound'
 const App = () => {
 
 
-  const API_URI = "http://localhost:8000/api/v1";
+  const API_URI = "/api/v1";
 
   const [stripeApiKey, setStripeApiKey] = useState("");
 
