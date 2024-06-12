@@ -10,6 +10,7 @@ import DescriptionIcon from "@mui/icons-material/Description";
 import StorageIcon from "@mui/icons-material/Storage";
 import SpellcheckIcon from "@mui/icons-material/Spellcheck";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import ApartmentIcon from '@mui/icons-material/Apartment';
 import SideBar from "./Sidebar";
 import { NEW_PRODUCT_RESET } from "../../slice/productSlice";
 import { useNavigate } from "react-router-dom";
@@ -115,12 +116,12 @@ const NewProduct = () => {
               />
             </div>
             <div>
-              <SpellcheckIcon />
+              <ApartmentIcon />
               <input
                 type="text"
                 placeholder="Restaurant Name"
                 required
-                value={name}
+                value={restaurant}
                 onChange={(e) => setRestaurant(e.target.value)}
               />
             </div>
