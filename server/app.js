@@ -34,6 +34,10 @@ import userRoutes from './routes/userRoutes.js';
 import orderRoutes from './routes/orderRoutes.js'
 import paymentRoutes from './routes/paymentRoutes.js'
 
+app.get("/hello",(req,res)=>{
+    res.send("Hello World");
+})
+
 app.use("/api/v1",productRoutes)
 app.use("/api/v1",userRoutes)
 app.use("/api/v1",orderRoutes)
