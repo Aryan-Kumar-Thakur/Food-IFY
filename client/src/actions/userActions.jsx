@@ -23,7 +23,6 @@ import {
     UPDATE_PROFILE_FAIL, UPDATE_PASSWORD_FAIL, UPDATE_USER_FAIL, DELETE_USER_FAIL, UPDATE_PROFILE_RESET,
     UPDATE_PASSWORD_RESET, UPDATE_USER_RESET, DELETE_USER_RESET
 } from "../slice/userSlice"
-import { config } from "dotenv";
 
 const API_URI = "/api/v1";
 
