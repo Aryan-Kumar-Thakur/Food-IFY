@@ -29,7 +29,7 @@ const Payment = () => {
     const { user } = useSelector((state) => state.user)
     const { error } = useSelector((state) => state.newOrder)
 
-    const API_URI = "http://localhost:8000/api/v1";
+    const API_URI = "/api/v1";
 
     const paymentData = {
         amount: Math.round(orderInfo.totalPrice * 100),
