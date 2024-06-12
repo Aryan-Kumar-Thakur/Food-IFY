@@ -3,7 +3,7 @@ import { ALL_PRODUCT_REQUEST, ALL_PRODUCT_SUCCESS, ALL_PRODUCT_FAIL, ADMIN_PRODU
 import { PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_SUCCESS } from "../slice/productSlice"
 import { DELETE_ORDER_FAIL } from "../slice/orderSlice";
 
-const API_URI = "http://localhost:8000/api/v1";
+const API_URI = "/api/v1";
 
 //get Products
 

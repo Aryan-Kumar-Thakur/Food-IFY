@@ -9,7 +9,7 @@ import {
 import { ORDER_DETAILS_REQUEST, ORDER_DETAILS_SUCCESS, ORDER_DETAILS_FAIL } from "../slice/orderSlice"
 
 
-const API_URI = "http://localhost:8000/api/v1";
+const API_URI = "/api/v1";
 
 export const createOrder = (order) => {
     return async (dispatch) => {

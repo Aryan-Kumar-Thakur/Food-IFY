@@ -25,7 +25,7 @@ import {
 } from "../slice/userSlice"
 import { config } from "dotenv";
 
-const API_URI = "http://localhost:8000/api/v1";
+const API_URI = "/api/v1";
 
 //login
 export const login = (email, password) => {
