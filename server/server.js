@@ -19,7 +19,7 @@ import cloudinary from "cloudinary"
 
 
 //config
-dotenv.config({path:'server/config/config.env'})
+dotenv.config()
 
 connectDatabase();
 
