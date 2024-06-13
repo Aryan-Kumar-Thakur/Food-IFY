@@ -29,7 +29,7 @@ const Shipping = () => {
   const [state, setState] = useState(shippingInfo.state)
   const [country, setCountry] = useState(shippingInfo.country)
   const [pinCode, setPinCode] = useState(shippingInfo.pinCode)
-  const [phoneNo, setPhoneNo] = useState(shippingInfo.pinCode)
+  const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo)
 
   const shippingSubmit = (e) => {
     e.preventDefault();
@@ -37,7 +37,7 @@ const Shipping = () => {
       alert.error("Phone Number Should be 10 Digits Long")
       return;
     }
-    dispatch(saveShippingInfo({ address, state, city, country, pinCode, phoneNo }))
+    dispatch(saveShippingInfo({ phoneNo , address, state, city, country, pinCode }))
     navigate("/order/confirm")
   }
 

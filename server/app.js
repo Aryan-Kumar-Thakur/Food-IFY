@@ -23,6 +23,7 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(fileUpload())
 app.use(express.static(path.join(__dirname, "/client/dist")));
+app.use('/',express.static("/client/dist"))
 
 app.use(cors({
     origin: 'http://localhost:5173', //allow request only from these site
@@ -38,10 +39,6 @@ import productRoutes from './routes/productRoutes.js'
 import userRoutes from './routes/userRoutes.js';
 import orderRoutes from './routes/orderRoutes.js'
 import paymentRoutes from './routes/paymentRoutes.js'
-
-app.get("/hello",(req,res)=>{
-    res.send("Hello World");
-})
 
 app.use("/api/v1",productRoutes)
 app.use("/api/v1",userRoutes)
