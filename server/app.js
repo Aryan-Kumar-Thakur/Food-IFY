@@ -8,7 +8,12 @@ import fileUpload from 'express-fileupload';
 import dotenv from 'dotenv'
 
 
-dotenv.config()
+if (process.env.NODE_ENV !== "PRODUCTION") {
+    dotenv.config({ path: "server/config/config.env" })
+}
+else {
+    dotenv.config()
+}
 const __dirname = path.resolve();
 
 const app=express();

@@ -123,7 +123,7 @@ const LoginSignUp = () => {
                                         onChange={(e) => setLoginPassword(e.target.value)}
                                     />
                                 </div>
-                                {/* <Link to="/password/forgot">Forgot Password ?</Link> */}
+                                <Link to="/password/forgot">Forgot Password ?</Link>
                                 <input type="submit" value="Login" className='loginBtn' />
                             </form>
                             <form className='signUpForm' ref={registerTab} encType='multipart/form-data'
