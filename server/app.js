@@ -25,7 +25,7 @@ app.use(fileUpload())
 app.use(express.static(path.join(__dirname, "/client/dist")));
 
 app.get("/*", function (req, res) {
-    res.sendFile(path.join(__dirname, "/client/dist/index.html"), function (err) {
+    res.sendFile(path.join(__dirname, "/client/dist"), function (err) {
       if (err) {
         res.status(500).send(err);
       }
