@@ -33,6 +33,12 @@ app.use(cors({
     secure: true,
 }))
 
+const router = express.Router();
+
+router.get('/', (req,res) => {
+res.render('default/index');
+});
+
 
 //Route Import
 import productRoutes from './routes/productRoutes.js'
