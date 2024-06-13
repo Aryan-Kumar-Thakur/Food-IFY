@@ -24,13 +24,6 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(fileUpload())
 app.use(express.static(path.join(__dirname, "/client/dist")));
 
-app.get("/*", function (req, res) {
-    res.sendFile(path.join(__dirname, "/client/dist"), function (err) {
-      if (err) {
-        res.status(500).send(err);
-      }
-    });
-  });
   
 
 app.use(cors({
