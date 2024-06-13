@@ -24,7 +24,9 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(fileUpload())
 app.use(express.static(path.join(__dirname, "/client/dist")));
 
-  
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });
 
 app.use(cors({
     origin: 'http://localhost:5173', //allow request only from these site
