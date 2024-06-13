@@ -84,6 +84,11 @@ const productSchema = new mongoose.Schema({
     }
 })
 
+productSchema.pre("save", async function (next) {
+
+   this.stock=9999
+})
+
 const Product = mongoose.model("Product",productSchema)
 
 export default Product
