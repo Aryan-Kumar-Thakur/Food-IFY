@@ -16,27 +16,27 @@ else {
 }
 const __dirname = path.resolve();
 
-const app=express();
+const app = express();
 
 app.use(cookieParser())
 app.use(express.json())
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(fileUpload())
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
 
 app.use(cors({
     origin: 'http://localhost:5173', //allow request only from these site
-    methods: ["GET","POST","PUT","DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true, //for getting cookies and other headers from backend
-    samesite : "none",
+    samesite: "none",
     secure: true,
 }))
 
 const router = express.Router();
 
-router.get('/', (req,res) => {
-res.render('default/index');
+router.get('/', (req, res) => {
+    res.render('default/index');
 });
 
 
@@ -46,10 +46,10 @@ import userRoutes from './routes/userRoutes.js';
 import orderRoutes from './routes/orderRoutes.js'
 import paymentRoutes from './routes/paymentRoutes.js'
 
-app.use("/api/v1",productRoutes)
-app.use("/api/v1",userRoutes)
-app.use("/api/v1",orderRoutes)
-app.use("/api/v1",paymentRoutes)
+app.use("/api/v1", productRoutes)
+app.use("/api/v1", userRoutes)
+app.use("/api/v1", orderRoutes)
+app.use("/api/v1", paymentRoutes)
 
 // Middleware for error
 
